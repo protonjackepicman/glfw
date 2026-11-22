@@ -4,8 +4,8 @@ project "GLFW"
 	staticruntime "off"
 	warnings "off"
 
-	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+	targetdir ("bin/" .. output_dir .. "/%{prj.name}")
+	objdir ("bin-int/" .. output_dir .. "/%{prj.name}")
 
 	files
 	{
@@ -39,6 +39,7 @@ project "GLFW"
 			"src/x11_window.c",
 			"src/xkb_unicode.c",
 			"src/posix_module.c",
+			"src/posix_poll.c",
 			"src/posix_time.c",
 			"src/posix_thread.c",
 			"src/posix_module.c",
@@ -102,11 +103,11 @@ project "GLFW"
 		runtime "Debug"
 		symbols "on"
 
-	filter { "system:windows", "configurations:Debug-AS" }	
-		runtime "Debug"
-		symbols "on"
-		sanitize { "Address" }
-		flags { "NoRuntimeChecks", "NoIncrementalLink" }
+	-- filter { "system:windows", "configurations:Debug-AS" }	
+	-- 	runtime "Debug"
+	-- 	symbols "on"
+	-- 	sanitize { "Address" }
+	-- 	flags { "NoRuntimeChecks", "NoIncrementalLink" }
 
 	filter "configurations:Release"
 		runtime "Release"

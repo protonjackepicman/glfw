@@ -2,6 +2,9 @@
 build
 build-*
 
+bin
+bin-int
+
 # Visual Studio clutter
 _ReSharper*
 *.sdf
